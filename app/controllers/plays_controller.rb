@@ -1,4 +1,4 @@
-class PlaysController < ApplicationController
+class PlaysController < ProtectedController
   before_action :set_play, only: [:show, :update, :destroy]
 
   # GET /plays
