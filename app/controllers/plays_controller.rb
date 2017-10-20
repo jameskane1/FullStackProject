@@ -1,4 +1,4 @@
-class PlaysController < ApplicationController
+class PlaysController < OpenReadController
   before_action :set_play, only: [:show, :update, :destroy]
 
   # GET /plays
@@ -15,7 +15,7 @@ class PlaysController < ApplicationController
 
   # POST /plays
   def create
-    @play = Play.new(play_params)
+    @play = current_user.plays.build(play_params)
 
     if @play.save
       render json: @play, status: :created, location: @play

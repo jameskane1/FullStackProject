@@ -6,6 +6,7 @@ curl --include --request POST "http://localhost:4741/plays" \
     "yard_line": "'"${YARD_LINE}"'",
     "play_type": "'"${PLAY_TYPE}"'",
     "yards_gained": "'"${YARDS_GAINED}"'",
-    "play_result": "'"${PLAY_RESULT}"'"
+    "play_result": "'"${PLAY_RESULT}"'",
+    "user_id": "'"${USER_ID}"'"
   }
 }'
