@@ -1,4 +1,4 @@
-class PlaysController < OpenReadController
+class PlaysController < ApplicationController
   before_action :set_play, only: [:show, :update, :destroy]
 
   # GET /plays
@@ -46,6 +46,6 @@ class PlaysController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def play_params
-      params.require(:play).permit(:team, :yard_line, :play_type, :yards_gained, :play_result)
+      params.require(:play).permit(:team, :yard_line, :play_type, :yards_gained, :play_result, :user_id)
     end
 end

@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20171019153641) do
 
   create_table "plays", force: :cascade do |t|
     t.string "team"
-    t.string "yard_line"
+    t.integer "yard_line"
     t.string "play_type"
     t.integer "yards_gained"
     t.string "play_result"
