@@ -1,9 +1,9 @@
-class PlaysController < OpenReadController
+class PlaysController < ProtectedController
   before_action :set_play, only: [:show, :update, :destroy]
 
   # GET /plays
   def index
-    @plays = Play.all
+    @plays = current_user.plays.all
 
     render json: @plays
   end
@@ -41,7 +41,7 @@ class PlaysController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_play
-      @play = Play.find(params[:id])
+      @play = current_user.plays.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
